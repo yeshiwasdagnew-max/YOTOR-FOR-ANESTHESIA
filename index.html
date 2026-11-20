@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07182b">
+  <title>YOTOR FOR ANESTHESIA</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand-mark">Y</div>
+    <div class="brand-info">
+      <div class="brand">YOTOR</div>
+      <div class="subbrand">FOR ANESTHESIA</div>
+    </div>
+    <span class="top-spacer"></span>
+    <span class="secure-label">Learning Portal</span>
+  </header>
+
+  <main class="wrap">
+
+    <section class="hero">
+      <p class="eyebrow">ANESTHESIA EDUCATION PLATFORM</p>
+      <h1>Welcome to YOTOR</h1>
+      <p class="muted">Learn. Practice. Understand. Become a better anesthesia professional.</p>
+    </section>
+
+    <section id="config-warning" class="notice warning hidden">
+      Supabase connection is not configured. Check app.js.
+    </section>
+
+    <!-- LOGIN AND REGISTRATION -->
+    <section id="auth-card" class="panel">
+      <div class="tabs">
+        <button id="login-tab" class="tab active" type="button">Log in</button>
+        <button id="register-tab" class="tab" type="button">Register</button>
+      </div>
+
+      <form id="login-form" class="form">
+        <h2>Welcome back</h2>
+        <p class="muted small">Log in to access your learning portal.</p>
+
+        <label>Email address
+          <input id="login-email" type="email" autocomplete="email" required placeholder="you@example.com">
+        </label>
+
+        <label>Password
+          <input id="login-password" type="password" autocomplete="current-password" required placeholder="Your password">
+        </label>
+
+        <button class="primary" type="submit">Log in</button>
+      </form>
+
+      <form id="register-form" class="form hidden">
+        <h2>Create your account</h2>
+        <p class="muted small">New accounts require email confirmation and administrator approval.</p>
+
+        <label>Full name
+          <input id="reg-name" type="text" autocomplete="name" required maxlength="100" placeholder="Your full name">
+        </label>
+
+        <label>Student ID
+          <input id="reg-student-id" type="text" required maxlength="50" placeholder="University student ID">
+        </label>
+
+        <label>Email address
+          <input id="reg-email" type="email" autocomplete="email" required placeholder="you@example.com">
+        </label>
+
+        <label>Password
+          <input id="reg-password" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters">
+        </label>
+
+        <label>Confirm password
+          <input id="reg-confirm" type="password" autocomplete="new-password" minlength="8" required placeholder="Enter password again">
+        </label>
+
+        <button class="primary" type="submit">Create account</button>
+      </form>
+
+      <p id="auth-message" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- ACCOUNT STATUS -->
+    <section id="status-card" class="panel hidden">
+      <div class="status-icon">⌛</div>
+      <p class="eyebrow">ACCOUNT STATUS</p>
+      <h2 id="status-title">Pending administrator approval</h2>
+      <p id="status-description" class="muted">
+        Your registration has been received. Please wait for administrator approval.
+      </p>
+
+      <div class="profile-summary">
+        <div><span>Name</span><strong id="profile-name">—</strong></div>
+        <div><span>Student ID</span><strong id="profile-student-id">—</strong></div>
+        <div><span>Status</span><strong id="profile-status">Pending</strong></div>
+      </div>
+
+      <button id="status-signout" class="secondary" type="button">Log out</button>
+    </section>
+
+    <!-- STUDENT DASHBOARD -->
+    <section id="student-card" class="panel hidden">
+
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">STUDENT DASHBOARD</p>
+          <h2 id="student-welcome">Welcome, student!</h2>
+          <p class="muted small">Your learning journey starts here.</p>
+        </div>
+        <div class="student-avatar">Y</div>
+      </div>
+
+      <div class="welcome-banner">
+        <p class="eyebrow">YOUR FUTURE IN ANESTHESIA</p>
+        <h2>Knowledge saves lives.</h2>
+        <p>Build your knowledge, strengthen your skills and prepare for clinical practice.</p>
+      </div>
+
+      <div class="section-heading">
+        <h2>Learning modules</h2>
+        <span class="small muted">Explore YOTOR</span>
+      </div>
+
+      <div class="module-grid">
+
+        <div class="module">
+          <span class="module-icon">📚</span>
+          <strong>Digital Library</strong>
+          <small>Books, PDFs and notes</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">🎓</span>
+          <strong>Courses</strong>
+          <small>Structured learning</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">🧠</span>
+          <strong>AI Study Guide</strong>
+          <small>Study from approved materials</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">🧮</span>
+          <strong>Anesthesia Calculator</strong>
+          <small>Educational calculations</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">📝</span>
+          <strong>Assignments</strong>
+          <small>Academic activities</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">📅</span>
+          <strong>Exam Schedule</strong>
+          <small>Exams and reminders</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">🎥</span>
+          <strong>Video Lectures</strong>
+          <small>Visual learning resources</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">🖼️</span>
+          <strong>Educational Gallery</strong>
+          <small>Anatomy and clinical images</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">📢</span>
+          <strong>Announcements</strong>
+          <small>Important academic updates</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">📋</span>
+          <strong>Clinical Logbook</strong>
+          <small>Clinical learning records</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">🫁</span>
+          <strong>Clinical Skills</strong>
+          <small>OR, ICU and emergency learning</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">👥</span>
+          <strong>Student Community</strong>
+          <small>Academic discussion</small>
+          <span class="module-status">Coming soon</span>
+        </div>
+
+      </div>
+
+      <div class="section-heading">
+        <h2>Quick information</h2>
+      </div>
+
+      <div class="info-card">
+        <span>🔔</span>
+        <div>
+          <strong>Notifications</strong>
+          <p class="muted small">Academic notifications will appear here when available.</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <span>📖</span>
+        <div>
+          <strong>Study reminder</strong>
+          <p class="muted small">Keep learning and developing your clinical knowledge.</p>
+        </div>
+      </div>
+
+      <button id="student-signout" class="secondary" type="button">Log out</button>
+
+    </section>
+
+    <!-- ADMINISTRATOR DASHBOARD -->
+    <section id="admin-card" class="panel hidden">
+      <p class="eyebrow">ADMINISTRATOR</p>
+      <h2>Administrator account detected</h2>
+      <p class="muted">
+        Your administrator account is recognized. The administration dashboard will be developed separately with secure server-side permissions.
+      </p>
+      <button id="admin-signout" class="secondary" type="button">Log out</button>
+    </section>
+
+    <footer>
+      <strong>YOTOR FOR ANESTHESIA</strong>
+      <p>Learn. Practice. Understand.</p>
+      <small>Academic learning and clinical education platform.</small>
+    </footer>
+
+  </main>
+
+  <!-- BOTTOM NAVIGATION VISUAL -->
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <div class="nav-item active">
+      <span>⌂</span>
+      <small>Home</small>
+    </div>
+    <div class="nav-item">
+      <span>📚</span>
+      <small>Library</small>
+    </div>
+    <div class="nav-item">
+      <span>🎓</span>
+      <small>Courses</small>
+    </div>
+    <div class="nav-item">
+      <span>🧠</span>
+      <small>AI Study</small>
+    </div>
+    <div class="nav-item">
+      <span>👤</span>
+      <small>Profile</small>
+    </div>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
