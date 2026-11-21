@@ -629,4 +629,3 @@ if (!supabaseReady) {
   });
 
 }
- 
