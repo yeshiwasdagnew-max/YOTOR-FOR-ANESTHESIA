@@ -299,9 +299,13 @@ async function updateStudentStatus(id, status) {
 
 // REFRESH STUDENT LIST
 
-$("refresh-students").addEventListener("click", () => {
-  loadAdminStudents();
-});
+const refreshButton = $("refresh-students");
+
+if (refreshButton) {
+  refreshButton.addEventListener("click", () => {
+    loadAdminStudents();
+  });
+}
 
 // LOAD USER PROFILE AND ACCOUNT STATUS
 
