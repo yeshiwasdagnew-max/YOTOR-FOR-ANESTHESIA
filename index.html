@@ -239,14 +239,49 @@
     </section>
 
     <!-- ADMINISTRATOR DASHBOARD -->
-    <section id="admin-card" class="panel hidden">
-      <p class="eyebrow">ADMINISTRATOR</p>
-      <h2>Administrator account detected</h2>
-      <p class="muted">
-        Your administrator account is recognized. The administration dashboard will be developed separately with secure server-side permissions.
-      </p>
-      <button id="admin-signout" class="secondary" type="button">Log out</button>
-    </section>
+<section id="admin-card" class="panel hidden">
+
+  <p class="eyebrow">ADMINISTRATOR</p>
+  <h2>YOTOR Administration</h2>
+  <p class="muted">
+    Manage student registrations and account approvals.
+  </p>
+
+  <div class="module-grid">
+
+    <div class="info-card">
+      <div>
+        <strong>Total Students</strong>
+        <h2 id="total-count">0</h2>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div>
+        <strong>Pending Approvals</strong>
+        <h2 id="pending-count">0</h2>
+      </div>
+    </div>
+
+  </div>
+
+  <button id="refresh-students" class="primary" type="button">
+    Refresh Student List
+  </button>
+
+  <p id="admin-message" class="message" role="status">
+    Administrator dashboard ready.
+  </p>
+
+  <div id="pending-students"></div>
+
+  <div id="all-students"></div>
+
+  <button id="admin-signout" class="secondary" type="button">
+    Log out
+  </button>
+
+</section>
 
     <footer>
       <strong>YOTOR FOR ANESTHESIA</strong>
